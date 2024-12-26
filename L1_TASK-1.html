@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-5px);
+        }
+
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature h3 {
+            color: #3498db;
+            margin-bottom: 20px;
+            font-size: 1.7em;
+        }
+
+        .feature p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* About Section */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background-color: #3498db;
+            color: white;
+        }
+
+        .about-text {
+            flex: 1;
+            max-width: 600px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.8em;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 600px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f0f4f8;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial h4 {
+            margin-top: 10px;
+            color: #3498db;
+            font-size: 1.1em;
+        }
+
+        /* Image Section */
+        .image-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+
+        .image-section img {
+            width: 300px;
+            margin: 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #8e44ad;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+
+            header p {
+                font-size: 1.3em;
+            }
+
+            .cta-button {
+                padding: 12px 35px;
+                font-size: 1em;
+            }
+
+            .features {
+                padding: 40px 10px;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text, .about-image {
+                max-width: 100%;
+            }
+
+            .about-image img {
+                width: 85%;
+            }
+
+            .about-text p {
+                font-size: 1em;
+            }
+
+            .testimonial {
+                margin: 15px;
+            }
+
+            .testimonial h4 {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Discover Innovation</h1>
+        <p>Your journey to success begins here with innovative solutions designed to accelerate business growth.</p>
+        <a href="#features" class="cta-button">Get Started</a>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="feature">
+            <h3>Automation Tools</h3>
+            <p>Boost productivity with our intuitive automation solutions that simplify tasks and save time.</p>
+        </div>
+        <div class="feature">
+            <h3>Seamless Integration</h3>
+            <p>Easily integrate with your existing tech stack, ensuring a smooth workflow transition without interruptions.</p>
+        </div>
+        <div class="feature">
+            <h3>Collaborative Community</h3>
+            <p>Join a thriving network of professionals, share insights, and collaborate for success.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <p>We are dedicated to providing innovative tech solutions that empower businesses. Our platform helps you stay ahead of the curve with tools designed for scalability and efficiency. We're committed to making technology accessible and transformative.</p>
+        </div>
+        <div class="about-image">
+            <img src="abt.jpg" alt="About Us Image">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial">
+            <p>"The integration was seamless, and the product's impact on our efficiency is remarkable!"</p>
+            <h4>- Jane Doe, CEO of TechWorks</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Their support team is responsive and[_{{{CITATION{{{_1{](https://github.com/luuthikieuoanh/DoAnBE/tree/a6ce86a2ee9e6fc680d9b7105fc10ed3eb4f1896/product.php)
+                <p>"Their support team is responsive and truly understands our needs. Highly recommend!"</p>
+<h4>- John Smith, Operations Manager at Bright Enterprises</h4>
+</div>
+<div class="testimonial">
+<p>"A game changer for our team! We’ve never seen such results so quickly."</p>
+<h4>- Emily Lee, Product Manager at InnovateTech</h4>
+</div>
+</section>
+
+<!-- Image Section -->
+<section class="image-section">
+<img src="image1.jpg" alt="Tech Innovation Image 1">
+<img src="image2.jpg" alt="Tech Innovation Image 2">
+<img src="image3.jpg" alt="Tech Innovation Image 3">
+</section>
+
+<!-- Footer -->
+<footer>
+<p>&copy; 2024 Your Company Name. All rights reserved.</p>
+<p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-of-service.html">Terms of Service</a></p>
+</footer>
+</body>
+</html>

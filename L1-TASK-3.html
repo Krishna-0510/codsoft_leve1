@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            position: relative;
+        }
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /*.calculator:hover {
+            transform: scale(1.05); /* Slightly enlarge the calculator on hover 
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover 
+        }*/
+
+        #display {
+            width: 100%;
+            height: 50px;
+            font-size: 2rem;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #e9e9e9;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        #display:focus {
+            background-color: #d3d3d3; /* Change background color on focus */
+            outline: none;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 20px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Change color on hover */
+            transform: translateY(-5px); /* Slight lift effect */
+        }
+
+        .btn:active {
+            transform: translateY(2px); /* Slight depression effect on click */
+        }
+
+        .operator {
+            background-color: #28a745;
+        }
+
+        .operator:hover {
+            background-color: #218838; /* Change color on hover */
+            transform: translateY(-5px); /* Slight lift effect */
+        }
+
+        .operator:active {
+            transform: translateY(2px); /* Slight depression effect on click */
+        }
+
+        .footer-text {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 1rem;
+            color: #666;
+            font-style: italic;
+            transition: color 0.3s ease;
+        }
+
+        .footer-text:hover {
+            color: #007bff; /* Change text color on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled />
+        <div class="buttons">
+            <button class="btn" onclick="clearDisplay()">C</button>
+            <button class="btn" onclick="appendToDisplay('7')">7</button>
+            <button class="btn" onclick="appendToDisplay('8')">8</button>
+            <button class="btn" onclick="appendToDisplay('9')">9</button>
+            <button class="btn operator" onclick="appendToDisplay('/')">/</button>
+            <button class="btn" onclick="appendToDisplay('4')">4</button>
+            <button class="btn" onclick="appendToDisplay('5')">5</button>
+            <button class="btn" onclick="appendToDisplay('6')">6</button>
+            <button class="btn operator" onclick="appendToDisplay('*')">*</button>
+            <button class="btn" onclick="appendToDisplay('1')">1</button>
+            <button class="btn" onclick="appendToDisplay('2')">2</button>
+            <button class="btn" onclick="appendToDisplay('3')">3</button>
+            <button class="btn operator" onclick="appendToDisplay('-')">-</button>
+            <button class="btn" onclick="appendToDisplay('0')">0</button>
+            <button class="btn operator" onclick="calculateResult()">=</button>
+            <button class="btn operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+    <div class="footer-text">Made by Krishna</div>
+
+    <script>
+        let display = document.getElementById('display');
+
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = '';
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+    
